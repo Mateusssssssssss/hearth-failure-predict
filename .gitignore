@@ -1,10 +1,53 @@
+# Ambientes e dependências locais
 .venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+*.egg-info/
+
+# Cache, compilados e ferramentas Python
 __pycache__/
 *.py[cod]
-data/processed/*.csv
-models/**/*.joblib
-models/*.json
-reports/figures/*.png
-reports/*.csv
-reports/*.json
-logs/*.log
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Arquivos locais de IDE/sistema operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Cache criado pelo Matplotlib
+.matplotlib/
+
+# Dados derivados: são regenerados por scripts/run_pipeline.py
+data/raw/*.csv
+data/processed/*
+!data/processed/.gitkeep
+
+# Artefatos treinados e registros de produção: não versionar binários nem métricas geradas
+models/*
+!models/.gitkeep
+*.joblib
+
+# Relatórios, gráficos e logs gerados durante a execução
+reports/*
+!reports/figures/
+reports/figures/*
+!reports/figures/.gitkeep
+logs/
+*.log
+
+# Arquivos temporários
+*.tmp
+*.bak
