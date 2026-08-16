@@ -1,0 +1,8 @@
+services:
+  heart-failure-pipeline:
+    build: .
+    container_name: heart-failure-pipeline
+    volumes:
+      # Preserva modelos, relatórios e logs gerados no computador local.
+      - ./:/app
+    command: python scripts/run_pipeline.py
